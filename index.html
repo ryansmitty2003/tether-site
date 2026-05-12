@@ -398,14 +398,14 @@
 
   <div id="waitlist">
     <form class="waitlist-form" id="waitlistForm" onsubmit="handleSubmit(event)">
-      <input type="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
+      <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" aria-label="Email address">
       <button type="submit">Join the Waitlist</button>
     </form>
     <div class="waitlist-success" id="waitlistSuccess">
       You're on the list — we'll be in touch soon.
     </div>
     <div id="waitlistError" style="display:none; font-size:14px; color:#C07060; margin-top:10px;">
-      Something went wrong — please try again or email us directly.
+      Something went wrong — please try again.
     </div>
     <p class="form-note">No spam. Unsubscribe anytime.</p>
   </div>
@@ -485,7 +485,7 @@
 </footer>
 
 <script>
-  const RESEND_API_KEY    = 'PASTE_YOUR_re_KEY_HERE';
+  const RESEND_API_KEY    = 're_6ihT3jVa_vrUomgcq5v2kjCKSxyotKEpM';
   const RESEND_AUDIENCE   = '04b99c31-e043-4df6-81d1-5ae8d8c7897c';
 
   async function handleSubmit(e) {
