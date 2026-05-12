@@ -404,6 +404,9 @@
     <div class="waitlist-success" id="waitlistSuccess">
       You're on the list — we'll be in touch soon.
     </div>
+    <div id="waitlistError" style="display:none; font-size:14px; color:#C07060; margin-top:10px;">
+      Something went wrong — please try again or email us directly.
+    </div>
     <p class="form-note">No spam. Unsubscribe anytime.</p>
   </div>
 
@@ -482,13 +485,45 @@
 </footer>
 
 <script>
-  function handleSubmit(e) {
+  const RESEND_API_KEY    = 'PASTE_YOUR_re_KEY_HERE';
+  const RESEND_AUDIENCE   = '04b99c31-e043-4df6-81d1-5ae8d8c7897c';
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    const form = document.getElementById('waitlistForm');
+    const form   = document.getElementById('waitlistForm');
+    const btn    = form.querySelector('button');
+    const input  = form.querySelector('input[type="email"]');
     const success = document.getElementById('waitlistSuccess');
-    form.style.display = 'none';
-    success.style.display = 'block';
-    // Wire up your actual form backend here (Formspree, Netlify Forms, etc.)
+    const errMsg  = document.getElementById('waitlistError');
+
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+    errMsg.style.display = 'none';
+
+    try {
+      const res = await fetch(
+        `https://api.resend.com/audiences/${RESEND_AUDIENCE}/contacts`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${RESEND_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: input.value.trim(),
+            unsubscribed: false
+          })
+        }
+      );
+
+      if (!res.ok) throw new Error(`${res.status}`);
+      form.style.display = 'none';
+      success.style.display = 'block';
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Join the Waitlist';
+      errMsg.style.display = 'block';
+    }
   }
 </script>
 
