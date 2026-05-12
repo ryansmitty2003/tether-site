@@ -67,7 +67,7 @@
   .nav-back:hover { background: var(--sand-lt); color: var(--text); }
 
   .hero {
-    padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 80px) clamp(32px, 5vw, 56px);
+    padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 80px) clamp(32px, 5vw, 48px);
     max-width: 760px; margin: 0 auto; text-align: center;
   }
   .hero-eyebrow {
@@ -84,29 +84,32 @@
   }
   h1 em { font-style: italic; color: var(--sage); }
   .hero p { font-size: 16px; color: var(--text-muted); max-width: 520px; margin: 0 auto; }
+  .effective-date {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 13px; color: var(--text-light);
+  }
 
   .content {
     max-width: 760px; margin: 0 auto;
     padding: 0 clamp(20px, 5vw, 80px) 80px;
   }
-  .notice-card {
-    background: var(--blush-lt); border: 1px solid var(--blush-md);
-    border-radius: var(--radius); padding: 24px 28px;
-    margin-bottom: 32px;
-    font-size: 14px; color: #A06050;
-    line-height: 1.6;
-  }
-  .notice-card strong { color: #8A4030; }
 
   h2 {
     font-family: 'Fraunces', serif;
     font-size: 20px; font-weight: 400; letter-spacing: -0.01em;
-    color: var(--text); margin-bottom: 10px; margin-top: 32px;
+    color: var(--text); margin-bottom: 10px; margin-top: 40px;
+    padding-top: 8px;
+    border-top: 1px solid var(--sand-md);
   }
-  p { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; }
+  h2:first-of-type { border-top: none; margin-top: 0; }
+  p { font-size: 15px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.7; }
   p:last-child { margin-bottom: 0; }
   ul { padding-left: 20px; margin-bottom: 14px; }
-  li { font-size: 15px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  li { font-size: 15px; color: var(--text-muted); margin-bottom: 8px; line-height: 1.6; }
+  strong { color: var(--text); font-weight: 500; }
+  a { color: var(--sage); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
   footer {
     border-top: 1px solid var(--sand-md);
@@ -146,47 +149,64 @@
 <div class="hero">
   <div class="hero-eyebrow">Legal</div>
   <h1>Terms of <em>Service</em></h1>
-  <p>The agreement between you and Tether when you use our app. Plain language where possible.</p>
+  <p>The agreement between you and Tether when you use our app.</p>
+  <span class="effective-date">Effective May 12, 2026</span>
 </div>
 
 <main class="content">
 
-  <div class="notice-card">
-    <strong>Placeholder notice:</strong> This is a placeholder Terms of Service. Before launching Tether publicly, replace this page with a complete, attorney-reviewed terms of service agreement appropriate for a healthcare-adjacent app that handles sensitive behavioral data. App Store guidelines require a full ToS before public distribution.
-  </div>
+  <h2>1. Acceptance</h2>
+  <p>By downloading, installing, or using Tether ("the app"), you agree to these Terms of Service ("Terms"). If you do not agree, do not use the app. These Terms apply to all users, including waitlist members, beta testers, and full app users.</p>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By downloading or using Tether, you agree to these terms. If you do not agree, do not use the app.</p>
-
-  <h2>2. Description of Service</h2>
-  <p>Tether is an iOS application that uses Apple's Screen Time framework (FamilyControls, ManagedSettings, DeviceActivity) to help users restrict access to apps and share accountability with a chosen group.</p>
+  <h2>2. What Tether Is</h2>
+  <p>Tether is an iOS application that uses Apple's Screen Time framework (FamilyControls, ManagedSettings, and DeviceActivity) to help adults voluntarily restrict access to apps and share accountability with a group they choose. Tether is a self-directed tool — you remain in control of your restrictions at all times.</p>
+  <p>Tether is not a medical device, a therapeutic service, or a parental control product. It is not a substitute for professional mental health support, addiction treatment, or medical advice.</p>
 
   <h2>3. Eligibility</h2>
-  <p>You must be 18 or older to create an account. Tether is not a parental controls product and is not intended for use with minors' devices.</p>
+  <p>You must be at least 18 years old to create an account or use Tether. By using the app, you represent that you meet this requirement. Tether is not intended for use with minors' devices.</p>
 
-  <h2>4. User Responsibilities</h2>
+  <h2>4. Your Account</h2>
+  <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately at <a href="mailto:ryanlsmith191@gmail.com">ryanlsmith191@gmail.com</a> if you suspect unauthorized access.</p>
+
+  <h2>5. Acceptable Use</h2>
+  <p>You agree not to:</p>
   <ul>
-    <li>You are responsible for the accountability group you create or join.</li>
-    <li>You may not use Tether to monitor someone without their knowledge and explicit consent.</li>
-    <li>You may not attempt to bypass, reverse-engineer, or manipulate the restriction or approval system.</li>
+    <li>Use Tether to monitor, restrict, or surveil another person without their explicit, informed consent.</li>
+    <li>Attempt to bypass, reverse-engineer, or tamper with the restriction enforcement or approval system.</li>
+    <li>Use the app for any unlawful purpose or in violation of Apple's App Store guidelines.</li>
+    <li>Impersonate another person or provide false information to your accountability group.</li>
+    <li>Attempt to gain unauthorized access to other users' accounts or data.</li>
   </ul>
 
-  <h2>5. Account Termination</h2>
-  <p>You may delete your account at any time from within the app. We reserve the right to suspend accounts that violate these terms.</p>
+  <h2>6. Group Accountability Features</h2>
+  <p>When you create or join an accountability group, you consent to sharing aggregate screen time summaries and unlock request activity with the other members of that group. You are responsible for choosing group members you trust. We are not responsible for how group members use information shared within the group.</p>
 
-  <h2>6. Disclaimer of Warranties</h2>
-  <p>Tether is provided "as is." We make no guarantees that the app will always be available, error-free, or sufficient for any particular therapeutic or behavioral health purpose. Tether is not a medical device and is not a substitute for professional mental health support.</p>
+  <h2>7. Apple Framework Entitlement</h2>
+  <p>Tether uses the <strong>com.apple.developer.family-controls</strong> entitlement granted by Apple. Use of this entitlement is governed by Apple's developer terms in addition to these Terms. You acknowledge that app restriction features depend on Apple's Screen Time infrastructure and may be affected by iOS updates.</p>
 
-  <h2>7. Limitation of Liability</h2>
-  <p>To the extent permitted by law, Tether's liability to you for any claim arising out of your use of the service is limited to the amount you paid us in the 12 months prior to the claim.</p>
+  <h2>8. Privacy</h2>
+  <p>Our collection and use of your personal information is described in our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
 
-  <h2>8. Changes to These Terms</h2>
-  <p>We may update these terms. Continued use of the app after changes constitutes acceptance of the updated terms.</p>
+  <h2>9. Intellectual Property</h2>
+  <p>The Tether name, logo, design, and all content within the app are owned by us and protected by applicable intellectual property laws. You may not copy, modify, or distribute any part of Tether without our written permission.</p>
 
-  <h2>9. Contact</h2>
-  <p>Questions? Reach us at <strong>legal@[yourdomain].com</strong> — replace with your actual contact before going live.</p>
+  <h2>10. Disclaimer of Warranties</h2>
+  <p>Tether is provided "as is" and "as available" without warranties of any kind, express or implied. We do not guarantee that the app will be uninterrupted, error-free, or suitable for any particular purpose. Screen Time restrictions depend on Apple's frameworks and iOS behavior, which we do not control.</p>
 
-  <p style="margin-top: 24px; font-size: 13px; color: var(--text-light);">Last updated: May 2026 — this page is a placeholder and must be replaced before public launch.</p>
+  <h2>11. Limitation of Liability</h2>
+  <p>To the maximum extent permitted by applicable law, Tether and its developers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app. Our total liability to you for any claim shall not exceed the amount you paid us in the 12 months preceding the claim, or $100 USD, whichever is greater.</p>
+
+  <h2>12. Termination</h2>
+  <p>You may delete your account at any time from within the app. We reserve the right to suspend or terminate accounts that violate these Terms, with or without notice. Upon termination, your right to use Tether ceases immediately. Sections 9–13 survive termination.</p>
+
+  <h2>13. Changes to These Terms</h2>
+  <p>We may update these Terms from time to time. We will update the effective date above and, where material changes are made, notify registered users by email or in-app notice. Continued use of Tether after changes take effect constitutes acceptance of the revised Terms.</p>
+
+  <h2>14. Governing Law</h2>
+  <p>These Terms are governed by the laws of the State of Texas, United States, without regard to conflict of law principles.</p>
+
+  <h2>15. Contact</h2>
+  <p>Questions about these Terms? Email <a href="mailto:ryanlsmith191@gmail.com">ryanlsmith191@gmail.com</a>.</p>
 
 </main>
 
@@ -195,6 +215,7 @@
     <a href="privacy.html">Privacy Policy</a>
     <a href="terms.html">Terms of Service</a>
     <a href="data.html">Data Practices</a>
+    <a href="support.html">Contact Support</a>
   </div>
   <p class="footer-copy">© 2026 Tether. All rights reserved.</p>
 </footer>
